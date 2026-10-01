@@ -1,12 +1,12 @@
-# LiteFPV-SOD
+# LFF-Net
 
 [![Python](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.2.0-red.svg)](https://pytorch.org/)
 [![CUDA](https://img.shields.io/badge/CUDA-11.8-green.svg)](https://developer.nvidia.com/cuda-toolkit)
 
-Official repository for **LiteFPV-SOD: An Ultra-Lightweight Detector for Real-Time Small-Object Detection on Edge-Deployed FPV Drones**.
+Official repository for **LFF-Net: A Lightweight Feature Fusion Network for Real-Time Small-Object Detection**.
 
-LiteFPV-SOD is an ultra-lightweight object detector designed for real-time small-object detection in UAV and FPV-drone imagery. The framework targets challenging aerial scenes where objects are small, visually weak, and affected by high altitude, poor illumination, motion blur, cluttered backgrounds, and low foreground-background contrast.
+LFF-Net is an ultra-lightweight object detector designed for real-time small-object detection in UAV and FPV-drone imagery. The framework targets challenging aerial scenes where objects are small, visually weak, and affected by high altitude, poor illumination, motion blur, cluttered backgrounds, and low foreground-background contrast.
 
 ---
 
@@ -33,7 +33,7 @@ At the current stage, this repository provides the project description, dataset 
 
 ## Overall Architecture
 
-LiteFPV-SOD consists of four main components:
+LFF-Net consists of four main components:
 
 1. **FFNet Backbone**  
    Extracts hierarchical multi-scale features while preserving fine-grained spatial information required for small-object detection.
@@ -80,8 +80,8 @@ LiteFPV-SOD consists of four main components:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/dhuvisionlab/LiteFPV-SOD.git
-cd LiteFPV-SOD
+git clone https://github.com/dhuvisionlab/LFF-Net.git
+cd LFF-Net
 ```
 
 ### 2. Create environment
@@ -166,7 +166,7 @@ https://github.com/dhuvisionlab/SOD-Dataset
 
 ### DOTA-v1.5 Annotation Conversion
 
-DOTA-v1.5 uses oriented bounding-box annotations. For LiteFPV-SOD training, the annotations should be converted into horizontal bounding boxes.
+DOTA-v1.5 uses oriented bounding-box annotations. For LFF-Net training, the annotations should be converted into horizontal bounding boxes.
 
 ```bash
 python tools/convert_dota_to_yolo.py   --src datasets/DOTA-v1.5/original_annotations   --dst datasets/DOTA-v1.5/labels
@@ -224,7 +224,7 @@ python tools/val.py   --weights weights/litefpv_sod_dota.pt   --data configs/dat
 
 ## Robustness Evaluation
 
-LiteFPV-SOD supports robustness evaluation under grayscale and synthetic night-vision conditions.
+LFF-Net supports robustness evaluation under grayscale and synthetic night-vision conditions.
 
 > Robustness preprocessing scripts will be uploaded after paper acceptance.
 
@@ -282,7 +282,7 @@ python tools/profile_model.py   --weights weights/litefpv_sod_uav_sod.pt   --img
 
 ## Raspberry Pi / FPV Drone Deployment
 
-LiteFPV-SOD was deployed on an FPV drone platform using a Raspberry Pi 5 and a 1080p HD camera module.
+LFF-Net was deployed on an FPV drone platform using a Raspberry Pi 5 and a 1080p HD camera module.
 
 > Raspberry Pi deployment scripts will be uploaded after paper acceptance.
 
@@ -313,10 +313,10 @@ Pretrained weights will be released after manuscript acceptance.
 
 | Model | Dataset | Download |
 |---|---|---|
-| LiteFPV-SOD | UAV-SOD | Coming soon |
-| LiteFPV-SOD | VisDrone2019 | Coming soon |
-| LiteFPV-SOD | DOTA-v1.5 | Coming soon |
-| LiteFPV-SOD | Raspberry Pi deployment | Coming soon |
+| LFF-Net | UAV-SOD | Coming soon |
+| LFF-Net | VisDrone2019 | Coming soon |
+| LFF-Net | DOTA-v1.5 | Coming soon |
+| LFF-Net | Raspberry Pi deployment | Coming soon |
 
 ---
 
@@ -325,7 +325,7 @@ Pretrained weights will be released after manuscript acceptance.
 The planned repository structure is shown below. The complete code will be uploaded after the paper is accepted.
 
 ```text
-LiteFPV-SOD/
+LFF-Net/
 ├── assets/
 ├── configs/
 │   ├── data/
@@ -358,11 +358,11 @@ If this work is useful for your research, please cite our paper:
 
 ```bibtex
 @misc{jobaer2026litefpvsod,
-  title        = {{LiteFPV-SOD}: An Ultra-Lightweight Detector for Real-Time Small-Object Detection on Edge-Deployed {FPV} Drones},
-  author       = {Jobaer, Sayed and Muzahid, A. A. M. and Hussain, Muhammad Ather Iqbal and Ahmed, Foysal and Tang, Xue-song and Gan, Yuan and Bai, Xiaoshan and Habib, Tushar MD Ahasan and Ahmed, Kh Shaikh and Shaha, Rony and Das, Sayekat Kumar and Han, Hua and Sohel, Ferdous},
+  title        = {{LFF-Net}: A Lightweight Feature Fusion Network for Real-Time Small-Object Detection},
+  author       = {Jobaer, Sayed and Muzahid, A. A. M. and Hussain, and Ahmed, Foysal and Tang, Xue-song and Gan, Yuan and Bai, Xiaoshan and Habib, Tushar MD Ahasan and Ahmed, Kh Shaikh and Shaha, Rony and Das, Sayekat Kumar and Han, Hua and Sohel, Ferdous},
   year         = {2026},
   note         = {Preprint},
-  url          = {https://github.com/dhuvisionlab/LiteFPV-SOD}
+  url          = {https://github.com/dhuvisionlab/LFF-Net}
 }
 ```
 
@@ -386,5 +386,5 @@ For questions about the code, dataset access, or deployment, please open an issu
 Repository:
 
 ```text
-https://github.com/dhuvisionlab/LiteFPV-SOD
+https://github.com/dhuvisionlab/LFF-Net
 ```
